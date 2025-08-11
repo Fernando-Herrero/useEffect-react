@@ -4,6 +4,7 @@ import { AutoRefreshingClock } from "./components/AutoRefreshingClock/AutoRefres
 import { CounterPreview } from "./components/CounterPreview/CounterPreview";
 import { WelcomeMessage } from "./components/WelcomeMessage/WelcomeMessage";
 import { ResponsiveLabel } from "./components/ResponsiveLabel/ResponsiveLabel";
+import { ProductsOnMount } from "./components/ProductsOnMount/ProductsOnMount";
 
 export const App = () => {
 	const [showClock, setShowCLock] = useState(true);
@@ -22,6 +23,7 @@ export const App = () => {
 				</button>
 			</div>
 			<ResponsiveLabel />
+			<ProductsOnMount />
 		</div>
 	);
 };
