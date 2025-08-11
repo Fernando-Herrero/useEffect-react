@@ -3,6 +3,7 @@ import "./App.css";
 import { AutoRefreshingClock } from "./components/AutoRefreshingClock/AutoRefreshingClock";
 import { CounterPreview } from "./components/CounterPreview/CounterPreview";
 import { WelcomeMessage } from "./components/WelcomeMessage/WelcomeMessage";
+import { ResponsiveLabel } from "./components/ResponsiveLabel/ResponsiveLabel";
 
 export const App = () => {
 	const [showClock, setShowCLock] = useState(true);
@@ -20,6 +21,7 @@ export const App = () => {
 					{showClock ? "Hide Clock" : "Show Clock"}
 				</button>
 			</div>
+			<ResponsiveLabel />
 		</div>
 	);
 };
