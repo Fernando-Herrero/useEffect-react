@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import "./ProductsOnMount.css";
+import { LocalProductSearch } from "../LocalProductSearch/LocalProductSearch";
 
 export const ProductsOnMount = () => {
 	const [products, setProducts] = useState([]);
+	const [filteredProducts, setFilteredProducts] = useState([]);
 	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState(null);
 
@@ -17,9 +19,10 @@ export const ProductsOnMount = () => {
 
 				const data = await response.json();
 				setProducts(data);
+				setFilteredProducts(data);
 			} catch (error) {
 				setError(error.message || "Unknown error");
-				onsole.error("Error fetching products:", error);
+				console.error("Error fetching products:", error);
 			} finally {
 				setLoading(false);
 			}
@@ -37,20 +40,23 @@ export const ProductsOnMount = () => {
 	}
 
 	return (
-		<div className="products-on-mount">
-			{products.map(({ id, category, description, image, price, rating, title }) => (
-				<div key={id} className="card-product">
-					<img src={image} alt={title} />
-					<div className="card-content">
-						<h3>
-							{title}({category})
-						</h3>
-						<p>{description}</p>
-						<span>{price}$</span>
-						<span>{rating.rate}⭐️</span>
+		<>
+			<LocalProductSearch products={products} onFilter={setFilteredProducts} />
+			<div className="products-on-mount">
+				{filteredProducts.map(({ id, category, description, image, price, rating, title }) => (
+					<div key={id} className="card-product">
+						<img src={image} alt={title} />
+						<div className="card-content">
+							<h3>
+								{title}({category})
+							</h3>
+							<p>{description}</p>
+							<span>{price}$</span>
+							<span>{rating.rate}⭐️</span>
+						</div>
 					</div>
-				</div>
-			))}
-		</div>
+				))}
+			</div>
+		</>
 	);
 };

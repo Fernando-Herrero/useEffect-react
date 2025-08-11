@@ -1,0 +1,7 @@
+.local-product-search  {
+    display: flex;
+    width: 300px;
+    margin: 0 auto;
+    border-bottom: none;
+    padding-bottom: 0;
+}
