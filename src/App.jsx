@@ -6,6 +6,7 @@ import { WelcomeMessage } from "./components/WelcomeMessage/WelcomeMessage";
 import { ResponsiveLabel } from "./components/ResponsiveLabel/ResponsiveLabel";
 import { ProductsOnMount } from "./components/ProductsOnMount/ProductsOnMount";
 import { CartSummary } from "./components/CartSummary/CartSummary";
+import { WindowsFocusStatus } from "./components/WindowsFocusStatus/WindowsFocusStatus";
 
 export const App = () => {
 	const [showClock, setShowCLock] = useState(true);
@@ -26,6 +27,7 @@ export const App = () => {
 			<ResponsiveLabel />
 			<ProductsOnMount />
 			<CartSummary />
+			<WindowsFocusStatus />
 		</div>
 	);
 };

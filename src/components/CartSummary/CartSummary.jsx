@@ -38,10 +38,10 @@ export const CartSummary = () => {
 	return (
 		<>
 			<div className="cart-summary-total">
-				<p>Subtotal:{subtotal}</p>
-				<p>Tax:{tax}</p>
+				<p>Subtotal:{subtotal}$</p>
+				<p>Tax:{tax}$</p>
 				<p>
-					<strong>Total:{total}</strong>
+					<strong>Total:{total}$</strong>
 				</p>
 			</div>
 
@@ -49,7 +49,7 @@ export const CartSummary = () => {
 				{cart.map(({ id, name, price, qty }) => (
 					<div key={id} className="cart-summary-card">
 						<h3>{name}</h3>
-						<p>{price}</p>
+						<p>{price}$</p>
 						<label>
 							<input type="number" value={qty} onChange={(e) => handleInputQty(e.target.value, id)} />
 						</label>
