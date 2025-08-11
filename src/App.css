@@ -1,9 +1,13 @@
 body {
 	background-color: black;
 	color: white;
+	height: 5000px;
 }
 
 .app-container > * {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 	margin: 0 auto;
 	max-width: 90vw;
 	text-align: center;

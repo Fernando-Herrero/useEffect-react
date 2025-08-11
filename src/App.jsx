@@ -7,6 +7,7 @@ import { ResponsiveLabel } from "./components/ResponsiveLabel/ResponsiveLabel";
 import { ProductsOnMount } from "./components/ProductsOnMount/ProductsOnMount";
 import { CartSummary } from "./components/CartSummary/CartSummary";
 import { WindowsFocusStatus } from "./components/WindowsFocusStatus/WindowsFocusStatus";
+import { ScrollTopButton } from "./components/ScrollTopButton/ScrollTopButton";
 
 export const App = () => {
 	const [showClock, setShowCLock] = useState(true);
@@ -28,6 +29,7 @@ export const App = () => {
 			<ProductsOnMount />
 			<CartSummary />
 			<WindowsFocusStatus />
+			<ScrollTopButton />
 		</div>
 	);
 };
