@@ -1,12 +1,25 @@
+import { useState } from "react";
 import "./App.css";
+import { AutoRefreshingClock } from "./components/AutoRefreshingClock/AutoRefreshingClock";
 import { CounterPreview } from "./components/CounterPreview/CounterPreview";
 import { WelcomeMessage } from "./components/WelcomeMessage/WelcomeMessage";
 
 export const App = () => {
+	const [showClock, setShowCLock] = useState(true);
 	return (
-		<>
+		<div className="app-container">
 			<WelcomeMessage />
 			<CounterPreview />
-		</>
+			<div className="auto-refreshing-clock-container">
+				{showClock && <AutoRefreshingClock />}
+				<button
+					onClick={() => {
+						setShowCLock((prev) => !prev);
+					}}
+				>
+					{showClock ? "Hide Clock" : "Show Clock"}
+				</button>
+			</div>
+		</div>
 	);
 };

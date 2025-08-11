@@ -1,4 +1,17 @@
 body {
     background-color: black;
     color: white;
+
+}
+
+.app-container > * {
+    margin: 0 auto;
+    max-width: 90vw;
+    text-align: center;
+    border-bottom: 1px solid pink ;
+    padding-top: 20px;
+}
+
+.app-container > *:last-child {
+    border-bottom: none;
 }
