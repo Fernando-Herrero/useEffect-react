@@ -7,6 +7,11 @@ export const ProductsOnMount = () => {
 	const [filteredProducts, setFilteredProducts] = useState([]);
 	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState(null);
+	const [showProducts, setShowProducts] = useState(false);
+
+	const handleShowProducts = () => {
+		setShowProducts((prev) => !prev);
+	};
 
 	useEffect(() => {
 		const fetchProducts = async () => {
@@ -42,21 +47,24 @@ export const ProductsOnMount = () => {
 	return (
 		<>
 			<LocalProductSearch products={products} onFilter={setFilteredProducts} />
-			<div className="products-on-mount">
-				{filteredProducts.map(({ id, category, description, image, price, rating, title }) => (
-					<div key={id} className="card-product">
-						<img src={image} alt={title} />
-						<div className="card-content">
-							<h3>
-								{title}({category})
-							</h3>
-							<p>{description}</p>
-							<span>{price}$</span>
-							<span>{rating.rate}⭐️</span>
+			<button className="show-products" onClick={handleShowProducts}>{showProducts ? "Hide products" : "Show Products"}</button>
+			{showProducts && (
+				<div className="products-on-mount">
+					{filteredProducts.map(({ id, category, description, image, price, rating, title }) => (
+						<div key={id} className="card-product">
+							<img src={image} alt={title} />
+							<div className="card-content">
+								<h3>
+									{title}({category})
+								</h3>
+								<p>{description}</p>
+								<span>{price}$</span>
+								<span>{rating.rate}⭐️</span>
+							</div>
 						</div>
-					</div>
-				))}
-			</div>
+					))}
+				</div>
+			)}
 		</>
 	);
 };

@@ -5,7 +5,7 @@ import { CounterPreview } from "./components/CounterPreview/CounterPreview";
 import { WelcomeMessage } from "./components/WelcomeMessage/WelcomeMessage";
 import { ResponsiveLabel } from "./components/ResponsiveLabel/ResponsiveLabel";
 import { ProductsOnMount } from "./components/ProductsOnMount/ProductsOnMount";
-import { LocalProductSearch } from "./components/LocalProductSearch/LocalProductSearch";
+import { CartSummary } from "./components/CartSummary/CartSummary";
 
 export const App = () => {
 	const [showClock, setShowCLock] = useState(true);
@@ -25,6 +25,7 @@ export const App = () => {
 			</div>
 			<ResponsiveLabel />
 			<ProductsOnMount />
+			<CartSummary />
 		</div>
 	);
 };
