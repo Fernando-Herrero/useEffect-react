@@ -8,6 +8,7 @@ import { ProductsOnMount } from "./components/ProductsOnMount/ProductsOnMount";
 import { CartSummary } from "./components/CartSummary/CartSummary";
 import { WindowsFocusStatus } from "./components/WindowsFocusStatus/WindowsFocusStatus";
 import { ScrollTopButton } from "./components/ScrollTopButton/ScrollTopButton";
+import { MousePositionTracker } from "./components/MousePositionTracker/MousePositionTracker";
 
 export const App = () => {
 	const [showClock, setShowCLock] = useState(true);
@@ -30,6 +31,7 @@ export const App = () => {
 			<CartSummary />
 			<WindowsFocusStatus />
 			<ScrollTopButton />
+			<MousePositionTracker />
 		</div>
 	);
 };
