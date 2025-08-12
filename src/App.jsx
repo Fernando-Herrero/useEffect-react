@@ -10,6 +10,7 @@ import { WindowsFocusStatus } from "./components/WindowsFocusStatus/WindowsFocus
 import { ScrollTopButton } from "./components/ScrollTopButton/ScrollTopButton";
 import { MousePositionTracker } from "./components/MousePositionTracker/MousePositionTracker";
 import { LocalStorageSync } from "./components/LocalStorageSync/LocalStorageSync";
+import { DocumentTitleUpdater } from "./components/DocumentTitleUpdater/DocumentTitleUpdater";
 
 export const App = () => {
 	const [showClock, setShowCLock] = useState(true);
@@ -34,6 +35,7 @@ export const App = () => {
 			<ScrollTopButton />
 			<MousePositionTracker />
 			<LocalStorageSync />
+			<DocumentTitleUpdater />
 		</div>
 	);
 };
